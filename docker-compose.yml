@@ -9,9 +9,9 @@ services:
       - MONGO_URL=mongodb://mongo:27017/todo
     depends_on:
       - mongo
-    working_dir: /usr/src/app
+    working_dir: /app
     volumes:
-      - .:/usr/src/app
+      - .:/app
     command: npm start
 
   mongo:
