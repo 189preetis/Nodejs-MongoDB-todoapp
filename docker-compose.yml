@@ -2,12 +2,12 @@ version: '3.8'
 
 services: 
   app:
-    build:
+    build: .
     ports:
      -  "3000:3000"
     environment:
      - MONGO_URL=mongodb://mongo:27017/todo
-    depend_on:
+    depends_on:
      - mongo
       
   mongo:
@@ -18,5 +18,5 @@ services:
       - mongo-data:/data/db
 
 
-  volumes:
+volumes:
     mongo-data:
